@@ -12,7 +12,7 @@ cd antlr4test
 mkdir src
 export GOPATH=`pwd`
 go get github.com/millergarym/antlr4-go
-cd src/github.com/millergarym/antlr4-go/example
+cd src/github.com/millergarym/antlr4-go/examples/expr
 go generate
 go test
 ```
