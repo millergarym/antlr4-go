@@ -2,17 +2,17 @@ package example
 
 // Current only work on OSX, the sed command is different on darwin
 
-//go:generate java -jar ../lib/antlr4-4.5.4-SNAPSHOT.jar ExprLR.g4 -o parser -visitor -Dlanguage=Go
-//go:generate sh -c "(cd parser; sed -i '' -e 's!github.com/antlr/antlr4/runtime/Go/antlr!../../!' *.go )"
-
+//go:generate java -jar ../../lib/antlr4-4.5.4-SNAPSHOT.jar ExprLR.g4 -o parser -visitor -Dlanguage=Go
+//go:generate sh -c "(cd parser; sed -i '' -e 's!github.com/antlr/antlr4/runtime/Go/antlr!../../../!' *.go )"
 
 import (
-	"./parser"
-	"fmt"
 	"bytes"
+	"fmt"
 	"testing"
 
-	antlr "../"
+	"./parser"
+
+	antlr "../../"
 )
 
 type treeShapeListener struct {
